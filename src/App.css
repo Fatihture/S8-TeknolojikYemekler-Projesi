@@ -1,6 +1,4 @@
-/* =========================================
-   GLOBAL
-========================================= */
+/* GLOBAL */
 
 .app {
   min-height: 100vh;
@@ -31,9 +29,7 @@
 }
 
 
-/* =========================================
-   HOME PAGE
-========================================= */
+/* HOME */
 
 .home-page {
   background-color: var(--beige);
@@ -331,10 +327,15 @@
 }
 
 
-/* =========================================
-   ORDER PAGE
-========================================= */
+                            /* ORDER */
 
+/* Sayfa arka planı */
+.order-page {
+  background-color: var(--beige);
+  padding-bottom: 4rem;
+}
+
+/* Üst kırmızı bar */
 .order-top-bar {
   background-color: var(--red);
   color: #fff;
@@ -346,161 +347,275 @@
   padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .order-logo {
-  height: 36px;
+  height: 30px;
 }
 
-/* PAGE */
-.order-page {
-  background-color: var(--beige);
-  padding-bottom: 3rem;
-}
-
-.order-container {
-  max-width: 1100px;
-  margin: 1.5rem auto 0;
-  padding: 0 1.5rem;
-}
-
-/* BANNER */
+/* Banner */
 .order-banner-big {
-  width: 100%;
   display: flex;
   justify-content: center;
+  margin: 0rem 0 1rem;
 }
 
 .order-banner-big img {
-  width: 420px;
+  width: 620px;
 }
 
-.order-form {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+/* Bej bilgi kutusu */
+.order-info-box {
+  background-color: var(--beige);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  border-radius: 12px;
 }
 
+.order-breadcrumb,
+.order-title,
+.order-price,
+.order-description,
 .order-header-meta {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.order-breadcrumb {
+  color: #555;
   font-size: 0.9rem;
-  color: var(--light-gray);
+  margin-bottom: 1rem;
+}
+
+.order-title {
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .order-price {
+  font-size: 1.6rem;
   font-weight: 700;
-  margin: 0.6rem 0 0.8rem;
+  margin-top: 1rem;
+}
+
+.order-header-meta {
+  display: flex;
+  justify-content: flex-end; /* sağa alır */
+  gap: 0.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .order-description {
-  font-size: 0.9rem;
-  color: var(--light-gray);
+  color: #6a6a6a;
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
-/* FORM */
+
+
+/* FORM BEYAZ ALAN */
+.order-form-wrapper {
+  background-color: #fff;
+  width: 100%;
+  padding: 3rem 0;
+  margin-top: 1rem;
+}
+
+.order-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+
+/* FORM ELEMENTLERİ */
+
+/* Form genel */
 .form-group {
   margin-top: 1.4rem;
 }
 
-.form-group label,
-.form-group p {
+.form-group label {
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   display: block;
 }
 
-input[type='text'],
-select,
-textarea {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-}
-
-textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-.radio-group label {
-  margin-right: 1.5rem;
-  font-size: 0.95rem;
-}
-
-/* TOPPINGS */
-.toppings-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.4rem 1rem;
+/* Boyut seçim */
+.size-options {
+  display: flex;
+  gap: 1rem;
   margin-top: 0.5rem;
 }
 
-/* ROWS */
+.size-pill {
+  background-color: #faf7f0;
+  padding: 1rem 1.4rem;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.size-pill input {
+  display: none;
+}
+
+.size-pill.active {
+  background-color: var(--yellow);
+  border-color: var(--yellow-dark, #d9a300);
+}
+
+/* Hamur seçimi */
+.dough-select-wrapper {
+  background-color: #faf7f0;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  border: 1px solid #eee;
+  position: relative;
+}
+
 .form-row {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  gap: 2rem;  
+  flex-wrap: nowrap; 
 }
 
 .form-group.half {
-  flex: 1;
+  flex: 1;          
+  min-width: 0;     
 }
 
-/* BOTTOM */
+
+.dough-select-wrapper select {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dough-select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+}
+
+
+/* Ek malzemeler grid */
+.toppings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+/* Topping kutuları */
+.topping-box {
+  background-color: #faf7f0;
+  padding: 0.6rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.topping-box input {
+  display: none;
+}
+
+.topping-visual {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topping-box input:checked + .topping-visual {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+/* Textarea */
+textarea {
+  background-color: #faf7f0;
+  border: 1px solid #eee;
+  min-height: 90px;
+  width: 100%
+}
+
+
+/* ADET + SİPARİŞ ÖZETİ */
 .order-bottom-row {
   margin-top: 2rem;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
+/* Adet kutusu */
 .quantity-box {
+  background-color: #faf7f0;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .quantity-box button {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background-color: #f3f3f3;
   border: none;
+  background: none;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
+/* Sipariş özeti */
 .summary-box {
-  margin-left: auto;
-  max-width: 320px;
-  background-color: #fafafa;
-  padding: 1.4rem;
+  background-color: #faf7f0;
+  border: 1px solid #e6e2d8;
+  padding: 1.8rem;
   border-radius: 12px;
+  max-width: 280px;
+  margin-left: auto;
 }
 
 .summary-line {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.4rem;
-  font-size: 0.95rem;
 }
 
 .summary-line.total {
   font-weight: 700;
 }
 
+/* Hata mesajları */
 .error-msg {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--red);
   margin-top: 0.3rem;
 }
 
 
-/* =========================================
-   SUCCESS PAGE
-========================================= */
+                                                  /* SUCCES PAGE */
 
 .success-page {
   background-color: var(--red);
@@ -562,9 +677,7 @@ textarea {
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+                                                                  /* FOOTER */
 
 .footer {
   background-color: #1c1c1c;
@@ -641,9 +754,7 @@ textarea {
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+                                                                      /* RESPONSIVE */
 
 @media (max-width: 768px) {
 
