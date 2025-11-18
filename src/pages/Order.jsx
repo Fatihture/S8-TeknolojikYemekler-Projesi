@@ -56,43 +56,49 @@ export default function Order({ setOrderData, setApiResponse }) {
   );
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!formValid) {
-      setFormError('Lütfen zorunlu alanları doldurun.');
-      return;
-    }
+  if (!formValid) {
+    setFormError('Lütfen zorunlu alanları doldurun.');
+    return;
+  }
 
-    const payload = {
-      boyut: size,
-      hamur: dough,
-      malzemeler: toppings,
-      not: note,
-      adet: quantity,
-      secimlerTutari: toppingsTotal,
-      toplam: subtotal,
-    };
+  const payload = {
+    boyut: size,
+    hamur: dough,
+    malzemeler: toppings,
+    not: note,
+    adet: quantity,
+    secimlerTutari: toppingsTotal,
+    toplam: subtotal,
+  };
 
-    try {
-      setIsSubmitting(true);
+  try {
+    setIsSubmitting(true);
 
-      const response = await axios.post("https://reqres.in/api/pizza", payload, {
+    const response = await axios.post(
+      "https://reqres.in/api/success",   
+      payload,
+      {
         headers: {
+          "x-api-key": "reqres-free-v1", 
           "Content-Type": "application/json"
         }
-      });
+      }
+    );
 
-      setOrderData(payload);
-      setApiResponse(response.data);
+    setOrderData(payload);
+    setApiResponse(response.data);
+    history.push('/success');
 
-      history.push('/success');
+  } catch (err) {
+    console.log("HATA:", err.response?.data || err);
+    setNetworkError("Sipariş gönderilirken hata oluştu.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
-    } catch {
-      setNetworkError("Sipariş gönderilirken hata oluştu.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section className="order-page">

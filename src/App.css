@@ -617,64 +617,89 @@ textarea {
 
                                                   /* SUCCES PAGE */
 
+/* SUCCESS PAGE – İstenen kompakt tasarım */
 .success-page {
   background-color: var(--red);
-  min-height: calc(100vh - 120px);
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  padding-top: 2rem;
   color: #fff;
-  text-align: center;
 }
 
 .success-inner {
-  padding: 3rem 1.5rem;
+  text-align: center;
+  max-width: 500px;
   width: 100%;
 }
 
+/* Logo */
+.success-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+/* “lezzetin yolda” */
+.success-subtext {
+  font-family: 'Dancing Script', cursive;
+  color: #ffdd63;
+  margin-bottom: -0.5rem;
+  margin-top: 4rem;
+}
+
+/* SİPARİŞ ALINDI */
 .success-title {
-  font-size: 2.2rem;
-  margin: 1rem 0 1.5rem;
+  font-size: 2.4rem;
   letter-spacing: 0.06em;
+  margin: 1rem 0  4rem;
 }
 
 .success-divider {
-  width: 260px;
+  width: 500px;
   height: 1px;
   background-color: #fff;
-  margin: 0 auto;
-  opacity: 0.6;
+  opacity: 0.4;
+  margin: 0 auto 1.3rem;
 }
 
-.success-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  max-width: 520px;
-  margin: 0 auto 2rem;
+/* Ürün adı */
+.success-product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
 }
 
+/* Detaylar */
 .success-details {
   text-align: left;
-  width: 100%;
+  margin: 0 auto 1.4rem;
+  line-height: 1.45;
+  max-width: 200px;
 }
 
+/* Özet kutusu */
 .success-summary-box {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0,0,0,0.12);
+  padding: 1.2rem 1.5rem;
   border-radius: 12px;
-  padding: 1.4rem 1.6rem;
-  width: 100%;
+  text-align: left;
+  margin: 0 auto 1.6rem;
+  margin-top: 6rem;
 }
 
-.success-summary-box h4 {
-  margin: 0 0 0.8rem;
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
 }
 
-.api-info {
-  margin-top: 0.8rem;
-  font-size: 0.85rem;
+.summary-line.total {
+  font-weight: 700;
 }
+
+
+
 
 
                                                                   /* FOOTER */
