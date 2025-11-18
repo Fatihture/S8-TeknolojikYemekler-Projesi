@@ -206,7 +206,6 @@ export default function Home() {
   {visibleItems.map((item) => (
     <article key={item.id} className="menu-card">
       
-      {/* ÜRÜN GÖRSELİ EKLENDİ */}
       <img src={item.img} alt={item.name} className="menu-card-img" />
 
       <div className="menu-card-body">
@@ -226,13 +225,7 @@ export default function Home() {
           <span className="menu-card-price">
             {item.price.toFixed(2)}₺
           </span>
-          <button
-            type="button"
-            className="btn-primary menu-card-btn"
-            onClick={goToOrder}
-          >
-            SİPARİŞ VER
-          </button>
+          
         </div>
       </div>
     </article>

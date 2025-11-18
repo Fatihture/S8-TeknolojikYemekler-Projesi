@@ -2,6 +2,8 @@ import { useState, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import ToppingCheckbox from '../components/ToppingCheckbox.jsx';
+import { Link } from "react-router-dom";
+
 
 const BASE_PRICE = 85.5;
 const TOPPING_PRICE = 5;
@@ -122,9 +124,15 @@ export default function Order({ setOrderData, setApiResponse }) {
         />
       </div>
 
-      {/* BEJ BİLGİ KUTUSU */}
       <div className="order-info-box">
-        <p className="order-breadcrumb">Anasayfa - Seçenekler - Sipariş Oluştur</p>
+        <p className="order-breadcrumb">
+       <Link to="/">Anasayfa</Link>
+       <span> - </span>
+       <Link to="/">Seçenekler</Link>
+       <span> - </span>
+       <span>Sipariş Oluştur</span>
+        </p>
+
 
         <h2 className="order-title">Position Absolute Acı Pizza</h2>
 
@@ -139,7 +147,6 @@ export default function Order({ setOrderData, setApiResponse }) {
         </p>
       </div>
 
-      {/* FORM - BEYAZ FULL GENİŞ ALAN */}
       <div className="order-form-wrapper">
         <div className="order-form">
           <form onSubmit={handleSubmit}>
