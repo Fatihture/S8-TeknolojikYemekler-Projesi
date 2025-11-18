@@ -1,0 +1,177 @@
+.success-page {
+  background-color: var(--red);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  color: #fff;
+}
+
+.success-inner {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Logo */
+.success-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+/* “lezzetin yolda” */
+.success-subtext {
+  font-family: 'Dancing Script', cursive;
+  color: #ffdd63;
+  margin-bottom: -0.5rem;
+  margin-top: 4rem;
+}
+
+/* SİPARİŞ ALINDI */
+.success-title {
+  font-size: 2.4rem;
+  letter-spacing: 0.06em;
+  margin: 1rem 0  4rem;
+}
+
+.success-divider {
+  width: 500px;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.4;
+  margin: 0 auto 1.3rem;
+}
+
+/* Ürün adı */
+.success-product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* Detaylar */
+.success-details {
+  text-align: left;
+  margin: 0 auto 1.4rem;
+  line-height: 1.45;
+  max-width: 200px;
+}
+
+/* Özet kutusu */
+.success-summary-box {
+  background-color: rgba(0,0,0,0.12);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+  margin: 0 auto 1.6rem;
+  margin-top: 6rem;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.summary-line.total {
+  font-weight: 700;
+}
+
+
+
+                                                                  /* FOOTER */
+
+.footer {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 3rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.footer-info p {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ddd;
+}
+
+.footer-icon {
+  width: 20px;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  color: #dcdcdc;
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  color: var(--yellow);
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.insta-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #333;
+  color: #bbb;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .summary-box {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .success-body {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 720px;
+  }
+
+  .success-title {
+    font-size: 1.6rem;
+  }
+}

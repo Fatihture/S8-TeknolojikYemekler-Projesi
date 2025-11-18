@@ -1,0 +1,343 @@
+
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: var(--yellow);
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary.full {
+  width: 100%;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+.home-page {
+  background-color: var(--beige);
+}
+
+/* HERO */
+.home-hero {
+  background-color: var(--red);
+  background-image: url('/images/iteration-1-images/home-banner.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  min-height: 820px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero-overlay {
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+.home-hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-logo {
+  width: 260px;
+  margin: 0 auto 3rem;
+  display: block;
+}
+
+.hero-subtext {
+  font-family: 'Dancing Script', cursive;
+  color: #ffdd63;
+  font-size: 1rem;
+  margin-bottom: -2rem;
+}
+
+.home-title {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+}
+
+.hero-btn {
+  padding-inline: 3.5rem;
+}
+
+
+/* CATEGORY STRIP */
+.home-category-strip {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.category-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.category-list li {
+  flex-shrink: 0;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-color: #fafafa;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-pill.active {
+  background-color: var(--dark-gray);
+  color: #fff;
+}
+
+.category-icon {
+  width: 26px;
+  height: 26px;
+}
+
+
+/* SPECIAL (KAMPANYALAR) */
+.home-special-section {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1.5rem;
+}
+
+.special-main-card {
+  background-color: var(--red);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.special-main-title {
+  font-size: 1.6rem;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.special-main-text {
+  font-size: 0.95rem;
+  max-width: 360px;
+}
+
+.special-main-btn {
+  align-self: flex-start;
+  margin-top: 1.2rem;
+}
+
+.special-side-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.special-side-card {
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  font-size: 0.95rem;
+}
+
+.kart-1 {
+  background-image: url('/images/iteration-2-images/cta/kart-1.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.kart-2 {
+  background-image: url('/images/iteration-2-images/cta/kart-2.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.kart-3 {
+  background-image: url('/images/iteration-2-images/cta/kart-3.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.small-btn {
+  margin-top: 1rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+}
+
+
+/* MOST POPULAR */
+.home-most-popular {
+  max-width: 1100px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.home-most-popular-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.home-most-popular-header .eyebrow {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--red);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: white;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin: 0.4rem 0 0;
+}
+
+.home-product-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.product-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.product-tab.active {
+  background-color: var(--dark-gray);
+  border-color: var(--dark-gray);
+  color: #fff;
+}
+
+.product-tab-icon {
+  width: 28px;
+  height: 28px;
+}
+
+
+/* PRODUCT GRID */
+.home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+}
+
+.menu-card-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.1rem;
+}
+
+.menu-card-desc {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+.menu-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.menu-card-rating {
+  font-weight: 600;
+}
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.menu-card-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+
+@media (max-width: 768px) {
+
+  .home-special-section {
+    grid-template-columns: 1fr;
+  }
+
+  .home-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+  }
+}
