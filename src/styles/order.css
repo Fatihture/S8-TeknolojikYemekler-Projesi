@@ -232,6 +232,30 @@
   border-color: var(--yellow);
 }
 
+
+
+
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fdf7ef;   /* bej */
+  font-size: 1rem;
+  margin-top: 0.4rem;
+}
+
+
+
+.error-msg {
+  color: #ff4444;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+
+
 /* Textarea */
 textarea {
   background-color: #faf7f0;
@@ -293,10 +317,6 @@ textarea {
   color: var(--red);
   margin-top: 0.3rem;
 }
-
-
-
-
 
 @media (max-width: 768px) {
 

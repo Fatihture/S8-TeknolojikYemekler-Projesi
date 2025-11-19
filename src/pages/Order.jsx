@@ -19,11 +19,16 @@ const TOPPINGS = [
 export default function Order({ setOrderData, setApiResponse }) {
   const history = useHistory();
 
+  const [customerName, setCustomerName] = useState("");
+
+
   const [size, setSize] = useState('');
   const [dough, setDough] = useState('');
   const [note, setNote] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [toppings, setToppings] = useState([]);
+
+  
 
   const [formError, setFormError] = useState('');
   const [networkError, setNetworkError] = useState('');
@@ -45,11 +50,14 @@ export default function Order({ setOrderData, setApiResponse }) {
     setToppings([...toppings, item]);
   };
 
+  const isNameValid = customerName.trim().length >= 3;
+
+
   const isSizeValid = !!size;
   const isDoughValid = !!dough;
   const isToppingsValid = toppings.length >= MIN_TOPPINGS;
 
-  const formValid = isSizeValid && isDoughValid && isToppingsValid;
+  const formValid = isSizeValid && isDoughValid && isToppingsValid && isNameValid;
 
   const toppingsTotal = useMemo(() => toppings.length * TOPPING_PRICE, [toppings]);
   const subtotal = useMemo(
@@ -66,6 +74,7 @@ export default function Order({ setOrderData, setApiResponse }) {
   }
 
   const payload = {
+    isim: customerName,
     boyut: size,
     hamur: dough,
     malzemeler: toppings,
@@ -196,12 +205,25 @@ export default function Order({ setOrderData, setApiResponse }) {
 
               <div className="toppings-grid">
                 {TOPPINGS.map((t) => (
-                  <ToppingCheckbox
-                    key={t}
-                    label={t}
-                    checked={toppings.includes(t)}
-                    onChange={() => toggleTopping(t)}
-                  />
+                 <ToppingCheckbox
+  key={t}
+  label={t}
+  checked={toppings.includes(t)}
+  onChange={() => toggleTopping(t)}
+  dataTestId={`topping-${t
+    .toLowerCase()
+    .replaceAll(" ", "")
+    .replaceAll("ı", "i")
+    .replaceAll("ö", "o")
+    .replaceAll("ü", "u")
+    .replaceAll("ş", "s")
+    .replaceAll("ç", "c")
+    .replaceAll("ğ", "g")
+  }`}
+/>
+
+
+
                 ))}
               </div>
 
@@ -210,14 +232,32 @@ export default function Order({ setOrderData, setApiResponse }) {
               )}
             </div>
 
+            {/* İSİM */}
+<div className="form-group">
+  <label>İsim *</label>
+  <input
+    type="text"
+    placeholder="Adınızı giriniz"
+    value={customerName}
+    onChange={(e) => setCustomerName(e.target.value)}
+    data-testid="name-input"
+  />
+  {!isNameValid && customerName.length > 0 && (
+    <span className="error-msg">İsim en az 3 karakter olmalıdır.</span>
+  )}
+</div>
+
+
             {/* NOT */}
             <div className="form-group">
               <label>Sipariş Notu</label>
               <textarea
-                placeholder="Siparişine eklemek istediğin bir not var mı?"
-                value={note}
-                onChange={(e) => setNote(e.target.value)}
-              />
+  placeholder="Siparişine eklemek istediğin bir not var mı?"
+  value={note}
+  onChange={(e) => setNote(e.target.value)}
+  data-testid="note-input"
+/>
+
             </div>
 
             {/* ADET + ÖZET */}
@@ -242,12 +282,14 @@ export default function Order({ setOrderData, setApiResponse }) {
                 </div>
 
                 <button
-                  type="submit"
-                  className="btn-primary full"
-                  disabled={!formValid || isSubmitting}
-                >
-                  {isSubmitting ? 'Gönderiliyor...' : 'SİPARİŞ VER'}
-                </button>
+  type="submit"
+  className="btn-primary full"
+  disabled={!formValid || isSubmitting}
+  data-testid="submit-btn"
+>
+  {isSubmitting ? 'Gönderiliyor...' : 'SİPARİŞ VER'}
+</button>
+
               </div>
             </div>
 
