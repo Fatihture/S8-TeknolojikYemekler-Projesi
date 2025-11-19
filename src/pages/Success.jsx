@@ -27,6 +27,8 @@ export default function Success({ orderData, apiResponse }) {
 
           <p><strong>Ek Malzemeler:</strong> {orderData.malzemeler.join(', ')}</p>
 
+
+
           {orderData.not && (
             <p><strong>Not:</strong> {orderData.not}</p>
           )}

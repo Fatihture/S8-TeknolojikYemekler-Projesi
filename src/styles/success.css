@@ -36,7 +36,8 @@
 }
 
 .success-divider {
-  width: 500px;
+    width: 90%;
+  max-width: 500px;
   height: 1px;
   background-color: #fff;
   opacity: 0.4;
@@ -55,8 +56,24 @@
   text-align: left;
   margin: 0 auto 1.4rem;
   line-height: 1.45;
-  max-width: 200px;
+  max-width: 100%;
+  width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
+
+.success-list {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.success-list li {
+  margin-bottom: 0.3rem;
+}
+
+
 
 /* Özet kutusu */
 .success-summary-box {
@@ -64,9 +81,12 @@
   padding: 1.2rem 1.5rem;
   border-radius: 12px;
   text-align: left;
-  margin: 0 auto 1.6rem;
-  margin-top: 6rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
 }
+
 
 .summary-line {
   display: flex;
@@ -158,20 +178,84 @@
 
 
 
+/* ---------------- SUCCESS RESPONSIVE FIX ---------------- */
+
 @media (max-width: 768px) {
 
-  .summary-box {
-    margin-left: 0;
-    width: 100%;
+  .success-page {
+    padding: 1rem;
   }
 
-  .success-body {
-    flex-direction: row;
-    align-items: flex-start;
-    max-width: 720px;
+  .success-inner {
+    max-width: 100%;
+    padding: 0 1rem;
   }
+
+  /* Divider taşmasın */
+  .success-divider {
+    width: 80%;
+  }
+
+  /* Başlıklar küçült */
+  .success-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .success-product-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* DETAYLAR TAŞMASIN */
+  .success-details {
+    max-width: 100%;
+    width: 80%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+    font-size: 0.95rem;
+  }
+
+  /* ÖZET KUTUSU TAŞMASIN */
+  .success-summary-box {
+    width: 100%;
+    margin-top: 3rem;        /* 6rem yerine 2rem */
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .summary-line span {
+    word-break: break-word;
+  }
+}
+
+
+/* Çok küçük ekranlar */
+@media (max-width: 480px) {
+
+   .success-summary-box {
+    width: 80%;
+    margin-top: 2rem;        /* 6rem yerine 2rem */
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+  }
+
 
   .success-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+
+  .success-inner img {
+    width: 150px;
+  }
+
+  .success-summary-box {
+    padding: 0.8rem;
+  }
+
+  .success-divider {
+    width: 70%;
   }
 }
